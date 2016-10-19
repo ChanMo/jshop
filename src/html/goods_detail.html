@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+{% block main %}
+<div class="top-bar">
+  <a href="#" class="float-left"><i class="fa fa-chevron-left"></i></a>
+  <a href="bag.html" class="float-right"><i class="fa fa-shopping-bag"></i></a>
+</div>
+<div class="container goods-detail">
+  <div class="slide">
+    <ul class="slide__container">
+      {% for i in range(0,4) %}
+      <li><img src="https://s-media-cache-ak0.pinimg.com/564x/72/d7/89/72d789a4204b4e7be415545ec132b2a6.jpg"></li>
+      {% endfor %}
+    </ul>
+    <ul class="slide__nav">
+      {% for i in range(0,4) %}
+      <li><a href="#"></a></li>
+      {% endfor %}
+    </ul>
+  </div>
+
+  <div class="detail">
+    <div class="title">
+      <h4>Juss Bag</h4>
+      <span>price:</span><span class="price"><i class="fa fa-rmb"></i>100</span>
+    </div>
+    <div class="description">
+      <p>brand: orange</p>
+      <p>size: S/M</p>
+    </div>
+  </div>
+
+  <div class="action-bar">
+    <a href="#" class="float-right text-warning" data-modal-toggle>BUY</a>
+  </div>
+</div>
+
+<div class="modal-bg" data-modal-toggle></div>
+<div class="modal modal_bottom">
+  <div class="modal__main">
+    <div class="count">
+      <div class="count__increase"><i class="fa fa-minus"></i></div>
+      <div class="count__main">1</div>
+      <div class="count__decrease"><i class="fa fa-plus"></i></div>
+    </div>
+    <div class="param">
+      <select><option>Size</option></select>
+      <select><option>Color</option></select>
+    </div>
+
+    <span>Price:&nbsp;</span><span class="price">1200</span>
+  </div>
+
+  <div class="modal__action">
+    <a href="#" class="item">shopping bag</a>
+    <a href="#" class="item" style="color:red;">Buy Now</a>
+  </div>
+</div>
+{% endblock %}

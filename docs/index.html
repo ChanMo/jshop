@@ -1,0 +1,82 @@
+<!doctype html>
+<html class="no-js" lang="zh-hans">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shop</title>
+    <link rel="stylesheet" href="css/app.css" />
+    <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+  </head>
+  <body>
+    <div class="main">
+      <div class="off-canvas">
+        <div class="off-canvas__bg"  data-off-canvas-toggle></div>
+        <div class="off-canvas__main">
+          <i class="fa fa-remove float-right" data-off-canvas-toggle></i>
+          <div class="left-box">
+            <div class="header">
+              <a href="#" class="avatar" style="background-image:url(https://s-media-cache-ak0.pinimg.com/564x/ae/9b/bf/ae9bbf4b4e8d9e00821553e7cb718891.jpg)"></a>
+              <div>
+                <h4>Chan Mo</h4>
+                <span>15550005746</span>
+              </div>
+            </div>
+            <div class="menu">
+              <ul class="">
+                <li><a href="myinfo.html">My Info</a></li>
+                <li><a href="#">My Order</a></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="bag.html">Shopping Bag</a></li>
+                <li><a href="category.html">Category</a></li>
+                <li><a href="#">Shops</a></li>
+                <li><a href="#">Help</a></li>
+                <li><a href="login.html">Log Out</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+<!-- <div class="off-canvas"> -->
+<!--   <div class="off-canvas__container"> -->
+<!--     <div class="off-canvas__main"> -->
+<!--       <i class="fa fa-remove float-right" onclick="off_canvas()"></i> -->
+<!--       hh -->
+<!--     </div> -->
+<!--     <div class="off-canvas__content_bg" onclick="off_canvas()"></div> -->
+<!--     <div class="off-canvas__content"> -->
+<!--       <div class="top-bar"> -->
+<!--         <a href="#" class="float-left" onclick="off_canvas()"><i class="fa fa-bars"></i></a> -->
+<!--         <a href="#" class="float-right"><i class="fa fa-shopping-bag"></i></a> -->
+<!--       </div> -->
+<!--     </div> -->
+<!--   </div> -->
+<!-- </div> -->
+
+<div class="top-bar">
+  <span class="title">Shop</span>
+  <a href="#" class="float-left" data-off-canvas-toggle><i class="fa fa-bars"></i></a>
+  <a href="bag.html" class="float-right bag-icon"><i class="fa fa-shopping-bag"></i>2</a>
+</div>
+
+<div class="container" style="margin-top: 5rem;">
+<a href="#" data-modal-toggle>modal</a>
+</div>
+
+<div class="modal-bg" data-modal-toggle></div>
+<div class="modal">
+  <div class="modal__main">
+    Thanks for your love.
+  </div>
+  <div class="modal__action">
+    <a class="item" data-modal-toggle>OK</a>
+  </div>
+</div>
+
+
+      <script src="//cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+      <script src="js/app.js"></script>
+    </div>
+  </body>
+</html>

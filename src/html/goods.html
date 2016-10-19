@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block main %}
+<div class="top-bar" style="background:white;">
+  <span class="title">Shoes</span>
+  <a href="#" class="float-left" data-off-canvas-toggle><i class="fa fa-bars"></i></a>
+  <a href="bag.html" class="float-right"><i class="fa fa-shopping-bag"></i></a>
+</div>
+<div class="container goods">
+  {% for i in range(0,5) %}
+  <div class="item">
+    <a class="container" href="goods_detail.html">
+      <div class="cover" style="background-image:url(https://s-media-cache-ak0.pinimg.com/564x/72/d7/89/72d789a4204b4e7be415545ec132b2a6.jpg);">
+      </div>
+      <h5>Jeans</h5>
+      <span class="price"><i class="fa fa-rmb"></i>1200</span>
+    </a>
+  </div>
+  {% endfor %}
+</div>
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block main %}
+<div class="top-bar">
+  <span class="title">My Info<span>
+  <a href="javascript:window.history.back();" class="float-left"><i class="fa fa-chevron-left"></i></a>
+  <!-- <a href="#" class="float-left" data-off-canvas-toggle><i class="fa fa-bars"></i></a> -->
+  <!-- <a href="bag.html" class="float-right"><i class="fa fa-shopping-bag"></i></a> -->
+</div>
+<div class="container myinfo">
+  <form>
+    <a class="avatar"><i class="fa fa-camera"></i></a>
+    <input type="file" name="avatar" class="hide">
+    <input type="text" placeholder="name" value="Chan Mo">
+    <input type="tel" placeholder="mobile">
+    <input type="password" placeholder="old password">
+    <input type="password" placeholder="new password">
+    <input type="password" placeholder="repeat password">
+    <input type="submit" value="save" class="button button_size_full">
+  </form>
+</div>
+{% endblock %}
