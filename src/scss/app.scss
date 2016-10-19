@@ -25,10 +25,6 @@ ul {
     list-style-type: none;
 }
 
-html, body {
-    height: 100%;
-}
-
 .button {
     background: black;
     color: white;
@@ -39,16 +35,67 @@ input {
     border-bottom: 1px solid lightgrey !important;
 }
 
-.fa-shopping-bag {
-
+.bag-icon {
+    position: relative;
+    span {
+        $size: 20px;
+        position: absolute;
+        bottom: 50%;
+        left: 40%;
+        font-size: xx-small;
+        display: block;
+        width: $size;
+        height: $size;
+        border-radius: $size;
+        line-height: $size;
+        text-align: center;
+        background: red;
+        color: white;
+        transform: scale(0.8);
+    }
 }
 
 
-.main {
-    width: 960px;
-    max-width: 100%;
-    margin: 0 auto;
+.modal-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
     height: 100%;
+    background: rgba(black,0.6);
+    z-index: 99;
+    display: none;
+}
+.modal {
+    background: white;
+    position: fixed;
+    bottom: 50%;
+    left: 50%;
+    width: 80%;
+    transform: translate(-50%, 50%);
+    z-index: 99;
+    color: black;
+    display: none;
+    box-shadow: 2px 2px 5px grey;
+    &__main {
+        padding: 2rem 1rem;
+        box-sizing: border-box;
+    }
+    &__action {
+        $size: 3rem;
+        background: black;
+        color: white;
+        box-sizing: border-box;
+        height: $size;
+        line-height: $size;
+        text-align: center;
+        display: flex;
+        .item {
+            width: 100%;
+            color: white;
+        }
+    }
 }
 
 .off-canvas {
@@ -56,13 +103,13 @@ input {
         position: fixed;
         top: 0;
         left: 0;
-        width: 80%;
+        width: 75%;
         height: 100%;
         background: white;
         transform: translateX(-100%);
-        transition: all .6s;
-        z-index: 999;
+        transition: all .5s;
         padding: 1rem;
+        z-index: 999;
     }
     &__bg {
         display: none;
@@ -73,7 +120,8 @@ input {
         height: 100%;
         background: rgba(black,0.2);
         opacity: 0;
-        transition: all .6s;
+        transition: all .5s;
+        z-index: 999;
     }
 }
 
@@ -87,15 +135,13 @@ input {
     }
 }
 
+
 .left-box {
-    padding: 1rem;
-    box-sizing: border-box;
-    coverflowY: scroll;
     .header {
         display: flex;
         align-items: center;
         border-bottom: 1px solid lightgrey;
-        h4 {
+        h5 {
             margin-bottom: .2rem;
         }
         span {
@@ -111,103 +157,73 @@ input {
             background-position: center;
             background-size: cover;
         }
-
     }
     .menu {
-        ul {
-            padding: 0;
-            margin: 0;
-        }
-        li,a {
+        overflow-y: scroll;
+        li {
             display: block;
         }
         a {
-            height: 2.5rem;
-            line-height: 2.5rem;
-            font-size: 1.2rem;
+            display: block;
+            height: 2rem;
+            line-height: 2rem;
         }
     }
 }
 
-/* .off-canvas { */
-/*     width: 100%; */
-/*     height: 100%; */
-/*     &__container { */
-/*         width: 100%; */
-/*         height: 100%; */
-/*     } */
-/*     &__main { */
-/*         width: 80%; */
-/*         height: 100%; */
-/*         z-index: 99; */
-/*         //box-shadow: 3px 0 5px grey; */
-/*         background: white; */
-/*         transition: all 1s; */
-/*         transform: translateX(-100%); */
-/*         box-sizing: border-box; */
-/*         padding: 1.5rem 1rem; */
-/*     } */
-/*     &__content { */
-/*         position: absolute; */
-/*         top: 0; */
-/*         left: 0; */
-/*         width: 100%; */
-/*         height: 100%; */
-/*         transition: all 1s; */
-/*     } */
-/*     &__content_bg { */
-/*         opacity: 0; */
-/*         position: absolute; */
-/*         top: 0; */
-/*         left: 0; */
-/*         width: 100%; */
-/*         height: 100%; */
-/*         background: rgba(black, .2); */
-/*         transition: all 1s; */
-/*         z-index: 100; */
-/*         transform: translateX(-100%); */
-/*     } */
-/*     &_open { */
-/*         .off-canvas__main { */
-/*             transform: translateX(0); */
-/*         } */
-/*         .off-canvas__content { */
-/*             transform: translateX(80%); */
-/*         } */
-/*         .off-canvas__content_bg { */
-/*             transform: translateX(80%); */
-/*             opacity: 1; */
-/*         } */
-/*     } */
-/* } */
-
-
 .top-bar {
     padding: 0 1rem;
     box-sizing: border-box;
-    background: rgba(black, 0);
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     text-align: center;
     z-index: 9;
+    background: rgba(white, 1);
     a {
         color: black;
     }
-    .title {
-        font-size: 1.2rem;
+    span {
+        font-size: 1rem;
         font-weight: 600;
     }
 }
-.top-bar_bag {
-    background: white;
-}
 
 .container {
-    width: 100%;
-    height: 100%;
-    box-sizing: border-box;
+    padding-top: 4.5rem;
+}
+
+.home {
+    padding: 0 0 1rem;
+    .cover {
+        height: 300px;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        text-align: center;
+        line-height: 300px;
+        //margin-bottom: .5rem;
+        .title {
+            color: white;
+            font-weight: 600;
+            font-size: 1.2rem;
+        }
+    }
+    .item {
+        //margin-bottom: .5rem;
+        position: relative;
+        &__title {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-weight: 600;
+            font-size: 1.2rem;
+            white-space: nowrap;
+        }
+    }
 }
 
 .category {
@@ -262,12 +278,30 @@ input {
 
 .goods {
     background: #efefef;
-    padding: 4.5rem 1rem 0;
+    padding: 4.5rem .5rem 1rem;
     display: flex;
     flex-wrap: wrap;
+    &__nav {
+        height: 40px;
+        line-height: 40px - 2px;
+        width: 100%;
+        white-space: nowrap;
+        overflow-x: scroll;
+        li, a {
+            display: inline-block;
+        }
+        a {
+            padding: 0 1rem;
+            border-top: 1px solid transparent;
+            border-bottom: 1px solid transparent;
+        }
+        .active a {
+            border-color: black;
+        }
+    }
     .item {
         width: 50%;
-        padding: .4rem;
+        padding: .2rem;
         box-sizing: border-box;
         .container {
             display: block;
@@ -288,63 +322,32 @@ input {
 }
 
 .goods-detail {
+    padding: 0 0 4rem;
     .detail {
         padding: .5rem 1rem;
         box-sizing: border-box;
         .title {
             padding: .5rem;
+            box-sizing: border-box;
             border-bottom: 1px solid lightgrey;
-            .name {
-                margin-bottom: .5rem;
-            }
-            .price {
-                margin-left: .5rem;
-                color: purple;
-            }
         }
         .description {
             padding: .5rem;
+            //box-sizing: border-box;
+            //border-bottom: 1px solid lightgrey;
         }
     }
 }
 
-.action-bar {
-    position: fixed;
+.goods-detail-modal {
     bottom: 0;
     left: 0;
+    transform: translate(0);
     width: 100%;
-    height: 4rem;
-    line-height: 4rem;
-    background: black;
-    padding: 0 1rem;
-    box-sizing: border-box;
-}
+    height: auto;
 
-
-.modal-bg {
-    position: fixed;
-    top: 0;
-    left: 0;
-    display: block;
-    width: 100%;
-    height: 100%;
-    background: rgba(black,0.6);
-    z-index: 99;
-    display: none;
-}
-.modal {
-    background: white;
-    position: fixed;
-    bottom: 50%;
-    left: 50%;
-    width: 80%;
-    transform: translate(-50%, 50%);
-    z-index: 100;
-    color: black;
-    display: none;
-    box-shadow: 2px 2px 5px grey;
     .count {
-        margin-bottom: 1rem;
+        margin-bottom: .5rem;
         display: flex;
         div {
             border: 1px solid lightgrey;
@@ -357,51 +360,79 @@ input {
         &__main {
             width: 100%;
             text-align: center;
-            border-left: none;
-            border-right: none;
+            border-left: none !important;
+            border-right: none !important;
             font-weight: 600;
         }
     }
     .param {
         select {
             border-color: lightgrey;
+            margin-bottom: .5rem;
         }
     }
-    &__main {
-        padding: 1rem;
-        box-sizing: border-box;
+
+    .modal__main {
+        padding: 1.5rem 1rem;
     }
-    &__action {
-        $size: 3.5rem;
-        background: black;
+    .modal__action {
+        height: 3.5rem;
+        line-height: 3.5rem;
+    }
+}
+
+
+.action-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 4rem;
+    line-height: 4rem;
+    background: black;
+    padding: 0 1rem;
+    box-sizing: border-box;
+    a {
         color: white;
-        box-sizing: border-box;
-        height: $size;
-        line-height: $size;
-        text-align: center;
-        display: flex;
-        .item {
-            width: 100%;
-            color: white;
-        }
-    }
-    &_bottom {
-        bottom: 0;
-        left: 0;
-        transform: translate(0);
-        width: 100%;
-        height: auto;
     }
 }
 
 
 .bag {
-    padding: 1rem;
-    padding-top: 4.5rem;
+    padding: 4.5rem 1rem 4rem;
     box-sizing: border-box;
-    background: #eee;
-    .item {
+   background: #efefef;
+    .check {
+        $size: 20px;
+        display: inline-block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: $size;
+        height: $size;
+        text-align: center;
+        line-height: $size;
+        background: lightgrey;
+        color: white;
+    }
+    .check_active {
+        background: black;
+    }
+    .bar {
+        position: relative;
+        height: 3rem;
         background: white;
+        margin-bottom: .5rem;
+        line-height: 3rem;
+        padding: 0 1rem;
+        .check {
+            position: relative;
+        }
+    }
+    .item {
+        margin-bottom: .5rem;
+        background: white;
+        position: relative;
     }
     .main {
         display: flex;

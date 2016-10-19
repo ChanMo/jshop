@@ -16,4 +16,9 @@ $(function(){
     $(".modal-bg").toggle();
     $(".modal").toggle();
   });
+
+  $(".check").bind("click", function(e){
+    e.preventDefault();
+    $(this).toggleClass("check_active");
+  });
 });

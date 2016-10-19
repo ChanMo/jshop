@@ -1,32 +1,61 @@
 {% extends "base.html" %}
 {% block main %}
+
 <div class="top-bar top-bar_bag">
   <span class="title">Shopping Bag</span>
   <a href="javascript:window.history.back();" class="float-left"><i class="fa fa-chevron-left"></i></a>
-  <!-- <a href="#" class="float-right"><i class="fa fa-shopping-bag"></i></a> -->
 </div>
+
 <div class="container bag">
+
+  <div class="bar hide">
+    <div class="check {% if i == 1 %}check_active{% endif %}"><i class="fa fa-check"></i></div>
+    <span>Check All</span>
+  </div>
+
+  {% for i in range(0,2) %}
   <div class="item">
+    <div class="check {% if i == 1 %}check_active{% endif %}"><i class="fa fa-check"></i></div>
     <div class="main">
       <div class="cover">
-        <img src="https://s-media-cache-ak0.pinimg.com/236x/fa/14/a3/fa14a388c4ac55c90a9b287b359b879c.jpg">
+        <a href="goods_detail.html">
+          <img src="https://s-media-cache-ak0.pinimg.com/236x/fa/14/a3/fa14a388c4ac55c90a9b287b359b879c.jpg">
+        </a>
       </div>
       <div class="title">
         <h5>Orange's Bag</h5>
         <span>1200</span>
       </div>
       <div class="action">
-        <a href="#"><i class="fa fa-trash"></i></a>
+        <a href="#" data-modal-toggle><i class="fa fa-trash"></i></a>
       </div>
     </div>
     <div class="param">
+      <p>count: 1</p>
       <p>size: m</p>
       <p>color: orange</p>
       <div class="action">
-        <span class="price float-left">1200</span>
+        <span class="price float-left"><i class="fa fa-rmb"></i>1200</span>
         <a href="#" class="button">BUY NOW</a>
       </div>
     </div>
+  </div>
+  {% endfor %}
+</div>
+
+<div class="action-bar">
+  <span class="price"><i class="fa fa-rmb"></i>1200</span>
+  <a href="#" class="float-right">Check Out <i class="fa fa-arrow-right"></i></a>
+</div>
+
+<div class="modal-bg" data-modal-toggle></div>
+<div class="modal">
+  <div class="modal__main">
+    Delete It ?
+  </div>
+  <div class="modal__action">
+    <a href="#" class="item" data-modal-toggle>Cancel</a>
+    <a href="#" class="item" data-modal-toggle>Yes</a>
   </div>
 </div>
 {% endblock %}

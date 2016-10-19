@@ -1351,9 +1351,6 @@ ul {
   padding: 0;
   list-style-type: none; }
 
-html, body {
-  height: 100%; }
-
 .button {
   background: black;
   color: white; }
@@ -1362,23 +1359,71 @@ input {
   border: none !important;
   border-bottom: 1px solid lightgrey !important; }
 
-.main {
-  width: 960px;
-  max-width: 100%;
-  margin: 0 auto;
-  height: 100%; }
+.bag-icon {
+  position: relative; }
+  .bag-icon span {
+    position: absolute;
+    bottom: 50%;
+    left: 40%;
+    font-size: xx-small;
+    display: block;
+    width: 20px;
+    height: 20px;
+    border-radius: 20px;
+    line-height: 20px;
+    text-align: center;
+    background: red;
+    color: white;
+    transform: scale(0.8); }
+
+.modal-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 99;
+  display: none; }
+
+.modal {
+  background: white;
+  position: fixed;
+  bottom: 50%;
+  left: 50%;
+  width: 80%;
+  transform: translate(-50%, 50%);
+  z-index: 99;
+  color: black;
+  display: none;
+  box-shadow: 2px 2px 5px grey; }
+  .modal__main {
+    padding: 2rem 1rem;
+    box-sizing: border-box; }
+  .modal__action {
+    background: black;
+    color: white;
+    box-sizing: border-box;
+    height: 3rem;
+    line-height: 3rem;
+    text-align: center;
+    display: flex; }
+    .modal__action .item {
+      width: 100%;
+      color: white; }
 
 .off-canvas__main {
   position: fixed;
   top: 0;
   left: 0;
-  width: 80%;
+  width: 75%;
   height: 100%;
   background: white;
   transform: translateX(-100%);
-  transition: all .6s;
-  z-index: 999;
-  padding: 1rem; }
+  transition: all .5s;
+  padding: 1rem;
+  z-index: 999; }
 
 .off-canvas__bg {
   display: none;
@@ -1389,7 +1434,8 @@ input {
   height: 100%;
   background: rgba(0, 0, 0, 0.2);
   opacity: 0;
-  transition: all .6s; }
+  transition: all .5s;
+  z-index: 999; }
 
 .off-canvas_active .off-canvas__main {
   transform: translateX(0);
@@ -1398,110 +1444,75 @@ input {
 .off-canvas_active .off-canvas__bg {
   opacity: 1; }
 
-.left-box {
-  padding: 1rem;
-  box-sizing: border-box;
-  coverflowY: scroll; }
-  .left-box .header {
-    display: flex;
-    align-items: center;
-    border-bottom: 1px solid lightgrey; }
-    .left-box .header h4 {
-      margin-bottom: .2rem; }
-    .left-box .header span {
-      color: darkgrey; }
-    .left-box .header .avatar {
-      margin: 1rem;
-      display: inline-block;
-      width: 100px;
-      height: 100px;
-      border-radius: 100px;
-      background-position: center;
-      background-size: cover; }
-  .left-box .menu ul, .left-box .pagination ul {
-    padding: 0;
-    margin: 0; }
-  .left-box .menu li, .left-box .pagination li, .left-box .menu a, .left-box .pagination a {
+.left-box .header {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid lightgrey; }
+  .left-box .header h5 {
+    margin-bottom: .2rem; }
+  .left-box .header span {
+    color: darkgrey; }
+  .left-box .header .avatar {
+    margin: 1rem;
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    border-radius: 100px;
+    background-position: center;
+    background-size: cover; }
+
+.left-box .menu, .left-box .pagination {
+  overflow-y: scroll; }
+  .left-box .menu li, .left-box .pagination li {
     display: block; }
   .left-box .menu a, .left-box .pagination a {
-    height: 2.5rem;
-    line-height: 2.5rem;
-    font-size: 1.2rem; }
+    display: block;
+    height: 2rem;
+    line-height: 2rem; }
 
-/* .off-canvas { */
-/*     width: 100%; */
-/*     height: 100%; */
-/*     &__container { */
-/*         width: 100%; */
-/*         height: 100%; */
-/*     } */
-/*     &__main { */
-/*         width: 80%; */
-/*         height: 100%; */
-/*         z-index: 99; */
-/*         //box-shadow: 3px 0 5px grey; */
-/*         background: white; */
-/*         transition: all 1s; */
-/*         transform: translateX(-100%); */
-/*         box-sizing: border-box; */
-/*         padding: 1.5rem 1rem; */
-/*     } */
-/*     &__content { */
-/*         position: absolute; */
-/*         top: 0; */
-/*         left: 0; */
-/*         width: 100%; */
-/*         height: 100%; */
-/*         transition: all 1s; */
-/*     } */
-/*     &__content_bg { */
-/*         opacity: 0; */
-/*         position: absolute; */
-/*         top: 0; */
-/*         left: 0; */
-/*         width: 100%; */
-/*         height: 100%; */
-/*         background: rgba(black, .2); */
-/*         transition: all 1s; */
-/*         z-index: 100; */
-/*         transform: translateX(-100%); */
-/*     } */
-/*     &_open { */
-/*         .off-canvas__main { */
-/*             transform: translateX(0); */
-/*         } */
-/*         .off-canvas__content { */
-/*             transform: translateX(80%); */
-/*         } */
-/*         .off-canvas__content_bg { */
-/*             transform: translateX(80%); */
-/*             opacity: 1; */
-/*         } */
-/*     } */
-/* } */
 .top-bar {
   padding: 0 1rem;
   box-sizing: border-box;
-  background: transparent;
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   text-align: center;
-  z-index: 9; }
+  z-index: 9;
+  background: white; }
   .top-bar a {
     color: black; }
-  .top-bar .title {
-    font-size: 1.2rem;
+  .top-bar span {
+    font-size: 1rem;
     font-weight: 600; }
 
-.top-bar_bag {
-  background: white; }
-
 .container {
-  width: 100%;
-  height: 100%;
-  box-sizing: border-box; }
+  padding-top: 4.5rem; }
+
+.home {
+  padding: 0 0 1rem; }
+  .home .cover {
+    height: 300px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    text-align: center;
+    line-height: 300px; }
+    .home .cover .title {
+      color: white;
+      font-weight: 600;
+      font-size: 1.2rem; }
+  .home .item {
+    position: relative; }
+    .home .item__title {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: white;
+      font-weight: 600;
+      font-size: 1.2rem;
+      white-space: nowrap; }
 
 .category {
   padding: 4rem 0 0; }
@@ -1544,12 +1555,26 @@ input {
 
 .goods {
   background: #efefef;
-  padding: 4.5rem 1rem 0;
+  padding: 4.5rem .5rem 1rem;
   display: flex;
   flex-wrap: wrap; }
+  .goods__nav {
+    height: 40px;
+    line-height: 38px;
+    width: 100%;
+    white-space: nowrap;
+    overflow-x: scroll; }
+    .goods__nav li, .goods__nav a {
+      display: inline-block; }
+    .goods__nav a {
+      padding: 0 1rem;
+      border-top: 1px solid transparent;
+      border-bottom: 1px solid transparent; }
+    .goods__nav .active a {
+      border-color: black; }
   .goods .item {
     width: 50%;
-    padding: .4rem;
+    padding: .2rem;
     box-sizing: border-box; }
     .goods .item .container {
       display: block;
@@ -1564,19 +1589,46 @@ input {
     .goods .item h5 {
       margin: .2rem 0; }
 
-.goods-detail .detail {
-  padding: .5rem 1rem;
-  box-sizing: border-box; }
-  .goods-detail .detail .title {
-    padding: .5rem;
-    border-bottom: 1px solid lightgrey; }
-    .goods-detail .detail .title .name {
-      margin-bottom: .5rem; }
-    .goods-detail .detail .title .price {
-      margin-left: .5rem;
-      color: purple; }
-  .goods-detail .detail .description {
-    padding: .5rem; }
+.goods-detail {
+  padding: 0 0 4rem; }
+  .goods-detail .detail {
+    padding: .5rem 1rem;
+    box-sizing: border-box; }
+    .goods-detail .detail .title {
+      padding: .5rem;
+      box-sizing: border-box;
+      border-bottom: 1px solid lightgrey; }
+    .goods-detail .detail .description {
+      padding: .5rem; }
+
+.goods-detail-modal {
+  bottom: 0;
+  left: 0;
+  transform: translate(0);
+  width: 100%;
+  height: auto; }
+  .goods-detail-modal .count {
+    margin-bottom: .5rem;
+    display: flex; }
+    .goods-detail-modal .count div {
+      border: 1px solid lightgrey;
+      padding: .5rem 1rem; }
+    .goods-detail-modal .count__increase, .goods-detail-modal .count__decrease {
+      color: grey; }
+    .goods-detail-modal .count__main {
+      width: 100%;
+      text-align: center;
+      border-left: none !important;
+      border-right: none !important;
+      font-weight: 600; }
+  .goods-detail-modal .param select {
+    border-color: lightgrey;
+    margin-bottom: .5rem; }
+  .goods-detail-modal .modal__main {
+    padding: 1.5rem 1rem; }
+  .goods-detail-modal .modal__action {
+    height: 3.5rem;
+    line-height: 3.5rem; }
 
 .action-bar {
   position: fixed;
@@ -1588,73 +1640,39 @@ input {
   background: black;
   padding: 0 1rem;
   box-sizing: border-box; }
-
-.modal-bg {
-  position: fixed;
-  top: 0;
-  left: 0;
-  display: block;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.6);
-  z-index: 99;
-  display: none; }
-
-.modal {
-  background: white;
-  position: fixed;
-  bottom: 50%;
-  left: 50%;
-  width: 80%;
-  transform: translate(-50%, 50%);
-  z-index: 100;
-  color: black;
-  display: none;
-  box-shadow: 2px 2px 5px grey; }
-  .modal .count {
-    margin-bottom: 1rem;
-    display: flex; }
-    .modal .count div {
-      border: 1px solid lightgrey;
-      padding: .5rem 1rem; }
-    .modal .count__increase, .modal .count__decrease {
-      color: grey; }
-    .modal .count__main {
-      width: 100%;
-      text-align: center;
-      border-left: none;
-      border-right: none;
-      font-weight: 600; }
-  .modal .param select {
-    border-color: lightgrey; }
-  .modal__main {
-    padding: 1rem;
-    box-sizing: border-box; }
-  .modal__action {
-    background: black;
-    color: white;
-    box-sizing: border-box;
-    height: 3.5rem;
-    line-height: 3.5rem;
-    text-align: center;
-    display: flex; }
-    .modal__action .item {
-      width: 100%;
-      color: white; }
-  .modal_bottom {
-    bottom: 0;
-    left: 0;
-    transform: translate(0);
-    width: 100%;
-    height: auto; }
+  .action-bar a {
+    color: white; }
 
 .bag {
-  padding: 1rem;
-  padding-top: 4.5rem;
+  padding: 4.5rem 1rem 4rem;
   box-sizing: border-box;
-  background: #eee; }
+  background: #efefef; }
+  .bag .check {
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    line-height: 20px;
+    background: lightgrey;
+    color: white; }
+  .bag .check_active {
+    background: black; }
+  .bag .bar {
+    position: relative;
+    height: 3rem;
+    background: white;
+    margin-bottom: .5rem;
+    line-height: 3rem;
+    padding: 0 1rem; }
+    .bag .bar .check {
+      position: relative; }
   .bag .item {
-    background: white; }
+    margin-bottom: .5rem;
+    background: white;
+    position: relative; }
   .bag .main {
     display: flex;
     padding: 1rem;
