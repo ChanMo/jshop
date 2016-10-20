@@ -191,6 +191,7 @@ input {
 }
 
 .container {
+    box-sizing: border-box;
     padding-top: 4.5rem;
     opacity: 0;
     transform: translateX(-100%);
@@ -786,5 +787,59 @@ input {
                 color: white;
             }
         }
+    }
+}
+
+
+.cards {
+    padding: 4.5rem 1rem 1rem;
+    background: #efefef;
+    &__item {
+        margin-bottom: .5rem;
+        position: relative;
+        display: block;
+        background: white;
+        border-radius: 5px;
+        height: 60vw;
+        box-shadow: 2px 2px 2px lightgrey;
+        .title {
+            display: inline-block;
+            position: absolute;
+            top: 10%;
+            right: 10%;
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+        .number {
+            display: inline-block;
+            position: absolute;
+            top: 60%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            white-space: nowrap;
+            font-size: 1.2rem;
+            font-weight: 600;
+            text-shadow: 2px 2px 2px lightgrey;
+        }
+    }
+}
+
+
+.card {
+    padding: 4.5rem 1rem 1rem;
+    input[type='radio'] {
+        display: none;
+        & + label {
+            border-bottom: 1px solid transparent;
+            padding: 2px 5px;
+            color: grey;
+        }
+        &:checked + label {
+            border-color: black;
+            color: black;
+        }
+    }
+    .radio {
+        padding: 0 0.2rem .5rem;
     }
 }

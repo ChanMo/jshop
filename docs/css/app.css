@@ -1487,6 +1487,7 @@ input {
     font-weight: 600; }
 
 .container {
+  box-sizing: border-box;
   padding-top: 4.5rem;
   opacity: 0;
   transform: translateX(-100%);
@@ -1933,3 +1934,46 @@ input {
         background: black;
         font-size: 0.85rem;
         color: white; }
+
+.cards {
+  padding: 4.5rem 1rem 1rem;
+  background: #efefef; }
+  .cards__item {
+    margin-bottom: .5rem;
+    position: relative;
+    display: block;
+    background: white;
+    border-radius: 5px;
+    height: 60vw;
+    box-shadow: 2px 2px 2px lightgrey; }
+    .cards__item .title {
+      display: inline-block;
+      position: absolute;
+      top: 10%;
+      right: 10%;
+      font-size: 1.2rem;
+      font-weight: 600; }
+    .cards__item .number {
+      display: inline-block;
+      position: absolute;
+      top: 60%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      white-space: nowrap;
+      font-size: 1.2rem;
+      font-weight: 600;
+      text-shadow: 2px 2px 2px lightgrey; }
+
+.card {
+  padding: 4.5rem 1rem 1rem; }
+  .card input[type='radio'] {
+    display: none; }
+    .card input[type='radio'] + label {
+      border-bottom: 1px solid transparent;
+      padding: 2px 5px;
+      color: grey; }
+    .card input[type='radio']:checked + label {
+      border-color: black;
+      color: black; }
+  .card .radio {
+    padding: 0 0.2rem .5rem; }

@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block main %}
+<div class="top-bar">
+  <span class="title">Category</span>
+  <a href="#" class="float-left" data-off-canvas-toggle><i class="fa fa-bars"></i></a>
+  <a href="bag.html" class="float-right"><i class="fa fa-shopping-bag"></i></a>
+</div>
+<div class="container card">
+  <form>
+    <div class="radio">
+      <input name="bank" type="radio" id="bank1" value="orange"><label for="bank1">orange</label>
+      <input name="bank" type="radio" id="bank2" value="blue"><label for="bank2">blue</label>
+    </div>
+    <input type="text" placeholder="bank name">
+    <input type="number" placeholder="card number">
+    <input type="text" name="name" placeholder="name">
+    <input type="tel" name="mobile" placeholder="mobile">
+    <input type="submit" class="button button_size_full">
+  </form>
+</div>
+{% endblock %}

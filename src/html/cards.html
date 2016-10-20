@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block main %}
+<div class="top-bar">
+  <span class="title">Category</span>
+  <a href="#" class="float-left" data-off-canvas-toggle><i class="fa fa-bars"></i></a>
+  <a href="bag.html" class="float-right"><i class="fa fa-shopping-bag"></i></a>
+</div>
+<div class="container cards">
+  {% for i in range(0,2) %}
+  <a href="card.html" class="cards__item">
+    <span class="title">PICC</span>
+    <span class="number">622 0000 0000 0000</span>
+  </a>
+  {% endfor %}
+</div>
+{% endblock %}
