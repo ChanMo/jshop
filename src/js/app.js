@@ -38,4 +38,52 @@ $(function(){
       });
     }
   });
+
+  var startX;
+  var dist;
+  $(".slide__main").prepend($(".slide__main li:last-child"));
+  $(".slide__main").bind("touchstart", function(e){
+    var obj = e.changedTouches[0];
+    startX = obj.pageX;
+    e.preventDefault();
+  }).bind("touchmove", function(e){
+    e.preventDefault();
+  }).bind("touchend", function(e){
+    var obj = e.changedTouches[0];
+    dist = obj.pageX - startX;
+    //console.log(dist);
+    if(dist > 50){
+      slide_to_right();
+    }else if(dist < -50){
+      slide_to_left();
+    }
+    e.preventDefault();
+  });
 });
+
+
+function slide_to_left() {
+  console.log('to_left');
+  var slide = $(".slide__main");
+  var nav = $(".slide__nav");
+  var width = slide.find("li").width();
+  var item = slide.find("li:first-child");
+  slide.animate({left:-width}, 1000, function(){
+    slide.append(item);
+    slide.css({left:''});
+    nav.prepend(nav.find("li:last-child"));
+  });
+}
+
+function slide_to_right(){
+  console.log('to_right');
+  var slide = $(".slide__main");
+  var nav = $(".slide__nav");
+  var width = slide.find("li").width();
+  var item = slide.find("li:last-child");
+  slide.animate({left:+width}, 1000, function(){
+    slide.prepend(item);
+    slide.css({left:''});
+    nav.append(nav.find("li:first-child"));
+  });
+}

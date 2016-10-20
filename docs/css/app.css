@@ -1355,6 +1355,45 @@ ul {
   background: black;
   color: white; }
 
+.slide {
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+  position: relative; }
+  .slide__main {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 400vw;
+    margin-left: -100vw;
+    height: 100%; }
+    .slide__main li, .slide__main a {
+      width: 100vw;
+      display: block;
+      height: 100%; }
+    .slide__main li {
+      float: left; }
+    .slide__main a {
+      background-position: center;
+      background-size: cover; }
+  .slide__nav {
+    position: absolute;
+    bottom: .5rem;
+    right: 1rem;
+    display: flex; }
+    .slide__nav li, .slide__nav a {
+      display: inline-block; }
+    .slide__nav li {
+      margin: 0;
+      padding: 0; }
+    .slide__nav a {
+      margin: 0 2px;
+      height: 5px;
+      width: 5px;
+      background: lightgray; }
+    .slide__nav .active a {
+      background: black; }
+
 input {
   border: none !important;
   border-bottom: 1px solid lightgrey !important; }
@@ -1563,23 +1602,6 @@ input {
       font-size: 1.2rem;
       font-weight: 600;
       color: white; }
-
-.slide {
-  width: 100%;
-  height: 300px;
-  overflow: hidden;
-  position: relative; }
-  .slide__nav {
-    position: absolute;
-    bottom: .5rem;
-    right: 1rem; }
-    .slide__nav li {
-      display: inline-block; }
-    .slide__nav a {
-      display: inline-block;
-      height: 5px;
-      width: 5px;
-      background: gray; }
 
 .goods__sort-toggle {
   position: fixed;

@@ -6,18 +6,18 @@
   <a href="bag.html" class="float-right"><i class="fa fa-shopping-bag"></i></a>
 </div>
 
-
 <div class="container goods-detail">
 
   <div class="slide">
-    <ul class="slide__container">
-      {% for i in range(0,4) %}
-      <li><img src="https://s-media-cache-ak0.pinimg.com/564x/72/d7/89/72d789a4204b4e7be415545ec132b2a6.jpg"></li>
-      {% endfor %}
+    <ul class="slide__main">
+      <li><a href="#" style="background-image:url(https://s-media-cache-ak0.pinimg.com/564x/72/d7/89/72d789a4204b4e7be415545ec132b2a6.jpg);"></a></li>
+      <li><a href="#" style="background-image:url(https://s-media-cache-ak0.pinimg.com/564x/3f/26/7a/3f267ad8592fa81ae696100a4f801fc8.jpg);"></a></li>
+      <li><a href="#" style="background-image:url(https://s-media-cache-ak0.pinimg.com/564x/f4/35/bc/f435bc4e577b5fc27f888fee72fb035d.jpg);"></a></li>
+      <li><a href="#" style="background-image:url(https://s-media-cache-ak0.pinimg.com/564x/a0/69/60/a06960f77255cc9dbce3ca0c55f03479.jpg);"></a></li>
     </ul>
     <ul class="slide__nav">
       {% for i in range(0,4) %}
-      <li><a href="#"></a></li>
+      <li {% if i == 0 %}class="active"{% endif %}><a href="#"></a></li>
       {% endfor %}
     </ul>
   </div>
