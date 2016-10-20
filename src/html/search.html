@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block main %}
+
+<div class="top-bar" style="background:rgba(255,255,255,0)">
+  <span class="title">Search</span>
+  <a href="#" class="float-left"><i class="fa fa-chevron-left"></i></a>
+</div>
+
+<div class="container search">
+  <form>
+    <div class="search__box">
+      <input type="search" placeholder="Blackberry Passport">
+      <div><i class="fa fa-search"></i></div>
+    </div>
+  </form>
+  <ul class="search__suggestion">
+    <li><a href="goods_detail.html">autumn</a></li>
+    <li><a href="#">blackberry passport</a></li>
+    <li><a href="#">mac book</a></li>
+    <li><a href="#">pebble2</a></li>
+    <li><a href="#">kindle</a></li>
+  </ul>
+</div>
+
+{% endblock %}

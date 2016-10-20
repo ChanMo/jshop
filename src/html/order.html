@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block main %}
+<div class="top-bar" style="background:white;">
+  <span class="title">Order</span>
+  <a href="#" class="float-left"><i class="fa fa-chevron-left"></i></a>
+</div>
+<div class="container order">
+  <div class="order__header">
+    88888888
+  </div>
+  <div class="order__goods">
+    {% for i in range(0,3) %}
+    <div class="item">
+      <div class="item__cover" style="background-image:url(https://s-media-cache-ak0.pinimg.com/564x/28/2d/2a/282d2a442d66f573fb957351116ce1c6.jpg);">
+      </div>
+      <div class="item__main">
+        <h5>T shirt</h5>
+        <div>size: M | color: white</div>
+        <span>price: </span><span class="price">1200</span>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+  <div class="order__main">
+    <ul>
+      <li>Chan Mo</li>
+      <li>15550000000</li>
+      <li>China, Luoyang</li>
+      <li>count: 3</li>
+      <li><span class="price"><i class="fa fa-rmb"></i>2000</span></li>
+    </ul>
+  </div>
+  <div class="order__action">
+    <a href="#" class="button button_size_full">Pay</a>
+  </div>
+</div>
+{% endblock %}

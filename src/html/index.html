@@ -33,4 +33,25 @@
   </div>
 </div>
 
+<div class="container home2">
+  <div class="home2__cover">
+    <img src="https://s-media-cache-ak0.pinimg.com/564x/fc/1a/f2/fc1af239e5924f0c4a244eba86e6a080.jpg">
+  </div>
+  <div class="home2__part">
+    {% for i in range(0,8) %}
+    <a href="#">me</a>
+    {% endfor %}
+  </div>
+  <div class="home2__goods">
+    {% for i in range(0,6) %}
+    <a href="goods_detail.html" style="background-image:url(https://s-media-cache-ak0.pinimg.com/564x/b3/9a/be/b39abe1a4062c17c905b08460b3d4b89.jpg);">
+      <div>
+        T shirt:
+        <span class="price">1200</span>
+      </div>
+    </a>
+    {% endfor %}
+  </div>
+</div>
+
 {% endblock %}

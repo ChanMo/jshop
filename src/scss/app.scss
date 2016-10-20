@@ -107,7 +107,7 @@ input {
         height: 100%;
         background: white;
         transform: translateX(-100%);
-        transition: all .5s;
+        transition: all .3s;
         padding: 1rem;
         z-index: 999;
     }
@@ -120,7 +120,7 @@ input {
         height: 100%;
         background: rgba(black,0.2);
         opacity: 0;
-        transition: all .5s;
+        transition: all .3s;
         z-index: 999;
     }
 }
@@ -192,6 +192,13 @@ input {
 
 .container {
     padding-top: 4.5rem;
+    opacity: 0;
+    transform: translateX(-100%);
+    transition: all .4s;
+}
+.container_active {
+    transform: translateX(0);
+    opacity: 1;
 }
 
 .home {
@@ -222,6 +229,33 @@ input {
             font-weight: 600;
             font-size: 1.2rem;
             white-space: nowrap;
+        }
+    }
+}
+
+.search {
+    padding: 4.5rem 1rem 1rem;
+    form {
+        margin: 3rem 0 3rem;
+        padding: 0 1.5rem;
+    }
+    &__box {
+        border-bottom: 1px solid black;
+        display: flex;
+        align-items: center;
+        input {
+            border: none !important;
+            margin: 0 !important;
+        }
+        div {
+            padding: 0 .5rem;
+        }
+    }
+    &__suggestion {
+        text-align: center;
+        a {
+            display: inline-block;
+            padding: 0 0 .5rem;
         }
     }
 }
@@ -276,6 +310,70 @@ input {
     }
 }
 
+
+.goods__sort-toggle {
+    $size: 50px;
+    position: fixed;
+    bottom: 2rem;
+    left: 1rem;
+    width: $size;
+    height: $size;
+    line-height: $size;
+    border-radius: $size;
+    text-align: center;
+    background: #222;
+    color: white;
+    &:hover,
+    &:active {
+        color: white;
+    }
+}
+.goods__sort_active {
+    transform: translateY(0) !important;
+}
+.goods__sort {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: black;
+    padding: .5rem;
+    box-sizing: border-box;
+    $size: 3.5rem;
+    color: white;
+    transform: translateY(100%);
+    transition: all .2s;
+    &__close {
+        padding: 0 0 .5rem;
+        text-align: center;
+        span {
+            $isize: 5px;
+            display: inline-block;
+            height: $isize;
+            width: $isize;
+            border-radius: $isize;
+            background: white;
+        }
+    }
+    &__container {
+        display: flex;
+        justify-content: space-around;
+        a {
+            height: $size;
+            width: $size;
+            line-height: $size;
+            display: block;
+            color: white;
+            text-align: center;
+            font-size: 0.85rem;
+        }
+        .active {
+            border: 1px solid white;
+            border-radius: $size;
+        }
+    }
+}
+
 .goods {
     background: #efefef;
     padding: 4.5rem .5rem 1rem;
@@ -294,9 +392,11 @@ input {
             padding: 0 1rem;
             border-top: 1px solid transparent;
             border-bottom: 1px solid transparent;
+            color: darkgrey;
         }
         .active a {
-            border-color: black;
+            //border-color: black;
+            color: black;
         }
     }
     .item {
@@ -523,5 +623,168 @@ input {
         text-align: center;
         margin: 1rem auto;
         //color: white;
+    }
+}
+
+.orders {
+    padding: 4.5rem 1rem 1rem;
+    .item {
+        padding: .5rem .5rem;
+        border-bottom: 1px solid lightgrey;
+        &__header {
+        }
+        &__main {
+            display: flex;
+        }
+        &__number {
+            //font-weight: 600;
+        }
+        &__status {
+            display: inline-block;
+            padding: 5px 10px;
+            background: black;
+            color: white;
+            float: right;
+        }
+        &__name {
+        }
+    }
+    .cover {
+        width: 30vw;
+        height: 30vw;
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        position: relative;
+        span {
+            display: inline-block;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            padding: 2px 8px;
+            background: black;
+            color: white;
+            font-size: 0.75rem;
+        }
+    }
+}
+
+
+.order {
+    padding: 4.5rem 1rem 1rem;
+    .order__goods {
+        .item {
+            padding: .5rem;
+            border-bottom: 1px dashed lightgrey;
+            display: flex;
+            &__cover {
+                height: 25vw;
+                width: 25vw;
+                background-position: center;
+                background-size: 100% auto;
+                background-repeat: no-repeat;
+            }
+            &__main {
+                padding: .5rem;
+                h5 {
+                    margin-bottom: 5px;
+                }
+                p {
+                    margin: 0;
+                }
+            }
+        }
+    }
+
+    &__main {
+        padding: .5rem;
+        //border-bottom: 1px solid lightgrey;
+    }
+    &__action {
+        //padding: .5rem;
+    }
+}
+
+.wallet {
+    padding: 4.5rem 1rem 0;
+    &__main {
+        height: 30vh;
+        line-height: 30vh;
+        text-align: center;
+        //border: 1px solid lightgrey;
+        span {
+            font-size: 2rem;
+        }
+    }
+    &__part {
+        display: flex;
+        justify-content: space-around;
+        div {
+            width: 30%;
+            height: 3rem;
+            line-height: 3rem;
+            text-align: center;
+            color: black;
+            border: 1px solid lightgrey;
+        }
+        /* div:nth-child(1) { */
+        /*     background: blue; */
+        /* } */
+        /* div:nth-child(2) { */
+        /*     background: orange; */
+        /* } */
+        /* div:nth-child(3) { */
+        /*     background: red; */
+        /* } */
+    }
+    &__log {
+        margin: 1rem 0;
+    }
+}
+
+
+.home2 {
+    padding: 0 0 1rem;
+    &__part {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        a {
+            line-height: 2rem;
+            display: block;
+            width: 25%;
+            text-align: center;
+            font-size: 1.2rem;
+        }
+    }
+    &__goods {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        a {
+            margin-bottom: 1px;
+            display: block;
+            height: 40vh;
+            width: 49%;
+            background-position: center;
+            background-size: cover;
+            color: white;
+            position: relative;
+            div {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                background: black;
+                color: white;
+                display: inline-block;
+                padding: 2px 5px;
+            }
+            .price {
+                display: inline-block;
+                background: black;
+                font-size: 0.85rem;
+                color: white;
+            }
+        }
     }
 }

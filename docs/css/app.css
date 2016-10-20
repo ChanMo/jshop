@@ -1421,7 +1421,7 @@ input {
   height: 100%;
   background: white;
   transform: translateX(-100%);
-  transition: all .5s;
+  transition: all .3s;
   padding: 1rem;
   z-index: 999; }
 
@@ -1434,7 +1434,7 @@ input {
   height: 100%;
   background: rgba(0, 0, 0, 0.2);
   opacity: 0;
-  transition: all .5s;
+  transition: all .3s;
   z-index: 999; }
 
 .off-canvas_active .off-canvas__main {
@@ -1487,7 +1487,14 @@ input {
     font-weight: 600; }
 
 .container {
-  padding-top: 4.5rem; }
+  padding-top: 4.5rem;
+  opacity: 0;
+  transform: translateX(-100%);
+  transition: all .4s; }
+
+.container_active {
+  transform: translateX(0);
+  opacity: 1; }
 
 .home {
   padding: 0 0 1rem; }
@@ -1513,6 +1520,26 @@ input {
       font-weight: 600;
       font-size: 1.2rem;
       white-space: nowrap; }
+
+.search {
+  padding: 4.5rem 1rem 1rem; }
+  .search form {
+    margin: 3rem 0 3rem;
+    padding: 0 1.5rem; }
+  .search__box {
+    border-bottom: 1px solid black;
+    display: flex;
+    align-items: center; }
+    .search__box input {
+      border: none !important;
+      margin: 0 !important; }
+    .search__box div {
+      padding: 0 .5rem; }
+  .search__suggestion {
+    text-align: center; }
+    .search__suggestion a {
+      display: inline-block;
+      padding: 0 0 .5rem; }
 
 .category {
   padding: 4rem 0 0; }
@@ -1553,6 +1580,58 @@ input {
       width: 5px;
       background: gray; }
 
+.goods__sort-toggle {
+  position: fixed;
+  bottom: 2rem;
+  left: 1rem;
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  border-radius: 50px;
+  text-align: center;
+  background: #222;
+  color: white; }
+  .goods__sort-toggle:hover, .goods__sort-toggle:active {
+    color: white; }
+
+.goods__sort_active {
+  transform: translateY(0) !important; }
+
+.goods__sort {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: black;
+  padding: .5rem;
+  box-sizing: border-box;
+  color: white;
+  transform: translateY(100%);
+  transition: all .2s; }
+  .goods__sort__close {
+    padding: 0 0 .5rem;
+    text-align: center; }
+    .goods__sort__close span {
+      display: inline-block;
+      height: 5px;
+      width: 5px;
+      border-radius: 5px;
+      background: white; }
+  .goods__sort__container {
+    display: flex;
+    justify-content: space-around; }
+    .goods__sort__container a {
+      height: 3.5rem;
+      width: 3.5rem;
+      line-height: 3.5rem;
+      display: block;
+      color: white;
+      text-align: center;
+      font-size: 0.85rem; }
+    .goods__sort__container .active {
+      border: 1px solid white;
+      border-radius: 3.5rem; }
+
 .goods {
   background: #efefef;
   padding: 4.5rem .5rem 1rem;
@@ -1569,9 +1648,10 @@ input {
     .goods__nav a {
       padding: 0 1rem;
       border-top: 1px solid transparent;
-      border-bottom: 1px solid transparent; }
+      border-bottom: 1px solid transparent;
+      color: darkgrey; }
     .goods__nav .active a {
-      border-color: black; }
+      color: black; }
   .goods .item {
     width: 50%;
     padding: .2rem;
@@ -1733,3 +1813,123 @@ input {
     line-height: 100px;
     text-align: center;
     margin: 1rem auto; }
+
+.orders {
+  padding: 4.5rem 1rem 1rem; }
+  .orders .item {
+    padding: .5rem .5rem;
+    border-bottom: 1px solid lightgrey; }
+    .orders .item__main {
+      display: flex; }
+    .orders .item__status {
+      display: inline-block;
+      padding: 5px 10px;
+      background: black;
+      color: white;
+      float: right; }
+  .orders .cover {
+    width: 30vw;
+    height: 30vw;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative; }
+    .orders .cover span {
+      display: inline-block;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      padding: 2px 8px;
+      background: black;
+      color: white;
+      font-size: 0.75rem; }
+
+.order {
+  padding: 4.5rem 1rem 1rem; }
+  .order .order__goods .item {
+    padding: .5rem;
+    border-bottom: 1px dashed lightgrey;
+    display: flex; }
+    .order .order__goods .item__cover {
+      height: 25vw;
+      width: 25vw;
+      background-position: center;
+      background-size: 100% auto;
+      background-repeat: no-repeat; }
+    .order .order__goods .item__main {
+      padding: .5rem; }
+      .order .order__goods .item__main h5 {
+        margin-bottom: 5px; }
+      .order .order__goods .item__main p {
+        margin: 0; }
+  .order__main {
+    padding: .5rem; }
+
+.wallet {
+  padding: 4.5rem 1rem 0; }
+  .wallet__main {
+    height: 30vh;
+    line-height: 30vh;
+    text-align: center; }
+    .wallet__main span {
+      font-size: 2rem; }
+  .wallet__part {
+    display: flex;
+    justify-content: space-around;
+    /* div:nth-child(1) { */
+    /*     background: blue; */
+    /* } */
+    /* div:nth-child(2) { */
+    /*     background: orange; */
+    /* } */
+    /* div:nth-child(3) { */
+    /*     background: red; */
+    /* } */ }
+    .wallet__part div {
+      width: 30%;
+      height: 3rem;
+      line-height: 3rem;
+      text-align: center;
+      color: black;
+      border: 1px solid lightgrey; }
+  .wallet__log {
+    margin: 1rem 0; }
+
+.home2 {
+  padding: 0 0 1rem; }
+  .home2__part {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around; }
+    .home2__part a {
+      line-height: 2rem;
+      display: block;
+      width: 25%;
+      text-align: center;
+      font-size: 1.2rem; }
+  .home2__goods {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around; }
+    .home2__goods a {
+      margin-bottom: 1px;
+      display: block;
+      height: 40vh;
+      width: 49%;
+      background-position: center;
+      background-size: cover;
+      color: white;
+      position: relative; }
+      .home2__goods a div {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        background: black;
+        color: white;
+        display: inline-block;
+        padding: 2px 5px; }
+      .home2__goods a .price {
+        display: inline-block;
+        background: black;
+        font-size: 0.85rem;
+        color: white; }

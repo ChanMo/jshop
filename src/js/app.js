@@ -1,4 +1,7 @@
 $(function(){
+
+  $(".container").addClass("container_active");
+
   $(".fa-chevron-left").parent("a").bind("click", function(e){
     e.preventDefault();
     window.history.back();
@@ -20,5 +23,19 @@ $(function(){
   $(".check").bind("click", function(e){
     e.preventDefault();
     $(this).toggleClass("check_active");
+  });
+
+  /** goods list sort **/
+  $("[data-sort-toggle]").bind("click", function(e){
+    e.preventDefault();
+    $(".goods").unbind("click");
+    $(".goods__sort").toggleClass("goods__sort_active");
+    if($(".goods__sort").hasClass("goods__sort_active")){
+      $(".goods").bind("click", function(e){
+        e.preventDefault();
+        $(".goods__sort").toggleClass("goods__sort_active");
+        $(this).unbind("click");
+      });
+    }
   });
 });
