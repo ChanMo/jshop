@@ -1854,11 +1854,14 @@ input {
     .orders .item__main {
       display: flex; }
     .orders .item__status {
-      display: inline-block;
-      padding: 5px 10px;
-      background: black;
-      color: white;
+      /* display: inline-block; */
+      /* padding: 5px 10px; */
+      /* background: black; */
+      /* color: white; */
       float: right; }
+    .orders .item__description {
+      max-width: calc(100% - 30vw);
+      overflow: hidden; }
   .orders .cover {
     width: 30vw;
     height: 30vw;
@@ -1889,9 +1892,13 @@ input {
       background-size: 100% auto;
       background-repeat: no-repeat; }
     .order .order__goods .item__main {
-      padding: .5rem; }
+      max-width: calc(100% - 25vw);
+      padding: .5rem;
+      box-sizing: border-box; }
       .order .order__goods .item__main h5 {
-        margin-bottom: 5px; }
+        margin-bottom: 5px;
+        white-space: nowrap;
+        overflow: hidden; }
       .order .order__goods .item__main p {
         margin: 0; }
   .order__main {
