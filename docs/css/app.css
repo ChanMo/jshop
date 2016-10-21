@@ -1351,6 +1351,9 @@ ul {
   padding: 0;
   list-style-type: none; }
 
+html, body {
+  height: 100%; }
+
 .button {
   background: black;
   color: white; }
@@ -1534,6 +1537,7 @@ input {
   background: transparent; }
 
 .container {
+  min-height: 100%;
   box-sizing: border-box;
   padding-top: 4.5rem;
   opacity: 0;
@@ -1751,9 +1755,14 @@ input {
   line-height: 4rem;
   background: black;
   padding: 0 1rem;
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  transition: all .5s;
+  transform: translateY(100%); }
   .action-bar a {
     color: white; }
+
+.action-bar_active {
+  transform: translateY(0); }
 
 .bag {
   padding: 4.5rem 1rem 4rem;
@@ -1849,8 +1858,9 @@ input {
 .orders {
   padding: 4.5rem 1rem 1rem; }
   .orders .item {
-    padding: .5rem .5rem;
-    border-bottom: 1px solid lightgrey; }
+    padding: .5rem .5rem; }
+    .orders .item:not(:last-child) {
+      border-bottom: 1px solid lightgrey; }
     .orders .item__main {
       display: flex; }
     .orders .item__status {

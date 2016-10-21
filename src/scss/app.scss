@@ -25,6 +25,10 @@ ul {
     list-style-type: none;
 }
 
+html, body {
+    height: 100%;
+}
+
 .button {
     background: black;
     color: white;
@@ -254,6 +258,7 @@ input {
 }
 
 .container {
+    min-height: 100%;
     box-sizing: border-box;
     padding-top: 4.5rem;
     opacity: 0;
@@ -535,16 +540,21 @@ input {
     background: black;
     padding: 0 1rem;
     box-sizing: border-box;
+    transition: all .5s;
+    transform: translateY(100%);
     a {
         color: white;
     }
+}
+.action-bar_active {
+    transform: translateY(0);
 }
 
 
 .bag {
     padding: 4.5rem 1rem 4rem;
     box-sizing: border-box;
-   background: #efefef;
+    background: #efefef;
     .check {
         $size: 20px;
         display: inline-block;
@@ -673,7 +683,9 @@ input {
     padding: 4.5rem 1rem 1rem;
     .item {
         padding: .5rem .5rem;
-        border-bottom: 1px solid lightgrey;
+        &:not(:last-child){
+            border-bottom: 1px solid lightgrey;
+        }
         &__header {
         }
         &__main {

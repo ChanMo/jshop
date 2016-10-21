@@ -1,6 +1,7 @@
 $(function(){
 
   $(".container").addClass("container_active");
+  $(".action-bar").addClass("action-bar_active");
 
   $(".fa-chevron-left").parent("a").bind("click", function(e){
     e.preventDefault();
@@ -51,7 +52,6 @@ $(function(){
   }).bind("touchend", function(e){
     var obj = e.changedTouches[0];
     dist = obj.pageX - startX;
-    //console.log(dist);
     if(dist > 50){
       slide_to_right();
     }else if(dist < -50){
