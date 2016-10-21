@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% block main %}
+<div class="top-bar top-bar_transparent">
+  <a href="javascript:window.history.back();" class="float-left"><i class="fa fa-chevron-left"></i></a>
+</div>
+
+<div class="shop-cover" style="background-image:url(https://s-media-cache-ak0.pinimg.com/564x/14/0a/77/140a77de07ffb8b266a3f93128dde141.jpg);">
+</div>
+
+<div class="container shop">
+  <div class="shop__description">
+    <h3>Small Shop</h3>
+    <p>name: small shop</p>
+    <p>tel: 0000000</p>
+    <p>address: China</p>
+    <div class="content">
+      There's a new web site that provides visualizations to give you insight into your text: Text is Beautiful. It has a Wordle-like word cloud, plus two other visualizations that make explicit the affinities between words in your source material.
+
+      It's a beautiful site, and I highly recommend it.
+    </div>
+    <div id="map">
+    </div>
+  </div>
+</div>
+{% endblock %}
+{% block js %}
+<script type="text/javascript" src="https://webapi.amap.com/maps?v=1.3&key=b03a155029e566a451cb4c7266b486d2"></script>
+<script>
+  $(function(){
+
+    var map = new AMap.Map('map', {
+      zoom:15,
+      center: [117.122692,36.687315],
+    });
+
+    var marker = new AMap.Marker({
+      position: [117.122692,36.687315],
+      map:map
+    });
+  });
+</script>
+{% endblock %}

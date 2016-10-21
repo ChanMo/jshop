@@ -44,63 +44,47 @@
       </div>
     </div>
     
-<div class="top-bar" style="background:white;">
-  <span class="title">Order</span>
-  <a href="#" class="float-left"><i class="fa fa-chevron-left"></i></a>
+<div class="top-bar top-bar_transparent">
+  <a href="javascript:window.history.back();" class="float-left"><i class="fa fa-chevron-left"></i></a>
 </div>
-<div class="container order">
-  <div class="order__header">
-    88888888
-  </div>
-  <div class="order__goods">
-    
-    <div class="item">
-      <div class="item__cover" style="background-image:url(https://s-media-cache-ak0.pinimg.com/564x/28/2d/2a/282d2a442d66f573fb957351116ce1c6.jpg);">
-      </div>
-      <div class="item__main">
-        <h5>T shirt</h5>
-        <div>size: M | color: white</div>
-        <span>price: </span><span class="price">1200</span>
-      </div>
+
+<div class="shop-cover" style="background-image:url(https://s-media-cache-ak0.pinimg.com/564x/14/0a/77/140a77de07ffb8b266a3f93128dde141.jpg);">
+</div>
+
+<div class="container shop">
+  <div class="shop__description">
+    <h3>Small Shop</h3>
+    <p>name: small shop</p>
+    <p>tel: 0000000</p>
+    <p>address: China</p>
+    <div class="content">
+      There's a new web site that provides visualizations to give you insight into your text: Text is Beautiful. It has a Wordle-like word cloud, plus two other visualizations that make explicit the affinities between words in your source material.
+
+      It's a beautiful site, and I highly recommend it.
     </div>
-    
-    <div class="item">
-      <div class="item__cover" style="background-image:url(https://s-media-cache-ak0.pinimg.com/564x/28/2d/2a/282d2a442d66f573fb957351116ce1c6.jpg);">
-      </div>
-      <div class="item__main">
-        <h5>T shirt</h5>
-        <div>size: M | color: white</div>
-        <span>price: </span><span class="price">1200</span>
-      </div>
+    <div id="map">
     </div>
-    
-    <div class="item">
-      <div class="item__cover" style="background-image:url(https://s-media-cache-ak0.pinimg.com/564x/28/2d/2a/282d2a442d66f573fb957351116ce1c6.jpg);">
-      </div>
-      <div class="item__main">
-        <h5>T shirt</h5>
-        <div>size: M | color: white</div>
-        <span>price: </span><span class="price">1200</span>
-      </div>
-    </div>
-    
-  </div>
-  <div class="order__main">
-    <ul>
-      <li>Chan Mo</li>
-      <li>15550000000</li>
-      <li>China, Luoyang</li>
-      <li>count: 3</li>
-      <li><span class="price"><i class="fa fa-rmb"></i>2000</span></li>
-    </ul>
-  </div>
-  <div class="order__action">
-    <a href="#" class="button button_size_full">Pay</a>
   </div>
 </div>
 
     <script src="//cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
     <script src="js/app.js"></script>
     
+<script type="text/javascript" src="https://webapi.amap.com/maps?v=1.3&key=b03a155029e566a451cb4c7266b486d2"></script>
+<script>
+  $(function(){
+
+    var map = new AMap.Map('map', {
+      zoom:15,
+      center: [117.122692,36.687315],
+    });
+
+    var marker = new AMap.Marker({
+      position: [117.122692,36.687315],
+      map:map
+    });
+  });
+</script>
+
   </body>
 </html>
