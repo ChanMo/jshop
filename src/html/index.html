@@ -54,12 +54,17 @@
   </div-->
 
   <div class="home2__part">
-    {% for i in range(0,8) %}
-    <a href="#" class="item">
+    {% for item in [
+    {icon:"user",name:"user",link:"#"},
+    {icon:"map",name:"shop",link:"#"},
+    {icon:"truck",name:"orders",link:"#"},
+    {icon:"shopping-bag",name:"bag",link:"#"}
+    ] %}
+    <a href="{{ item.link }}" class="item">
       <div class="item__icon">
-        <i class="fa fa-home"></i>
+        <i class="fa fa-{{ item.icon }}"></i>
       </div>
-      <div class="item__name">me</div>
+      <div class="item__name">{{ item.name }}</div>
     </a>
     {% endfor %}
   </div>

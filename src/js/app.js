@@ -26,6 +26,12 @@ $(function(){
     $(this).toggleClass("check_active");
   });
 
+  $(".fa-angle-down").bind("click", function(e){
+    e.preventDefault();
+    $(this).toggleClass("fa-angle-down_active");
+    $(".checkout__goods__list").toggle();
+  });
+
   /** goods list sort **/
   $("[data-sort-toggle]").bind("click", function(e){
     e.preventDefault();

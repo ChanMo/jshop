@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block main %}
+<div class="top-bar">
+  <span class="title">Pay</span>
+  <a href="javascript:window.history.back();" class="float-left"><i class="fa fa-chevron-left"></i></a>
+</div>
+
+<div class="container pay">
+  <div class="pay__order">
+    <h1 style="color:green;"><i class="fa fa-check"></i></h1>
+    <div>ordernum: 100000</div>
+    <div>price: 1200</div>
+    <div>created: 2016/11/11</div>
+    <div style="margin-top: .5rem;"><a href="order.html" style="color:red">order detail</a></div>
+  </div>
+  <div class="pay__action">
+    <a href="#" class="button">Alipay</a>
+    <a href="#" class="button">Visa</a>
+  </div>
+</div>
+
+{% endblock %}

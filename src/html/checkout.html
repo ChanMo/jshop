@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% block main %}
+<div class="top-bar">
+  <span class="title">Checkout</span>
+  <a href="javascript:window.history.back();" class="float-left"><i class="fa fa-chevron-left"></i></a>
+</div>
+
+<div class="container checkout">
+  <div class="checkout__goods">
+    <h5>Goods<i class="fa fa-angle-down float-right"></i></h5>
+    <div class="checkout__goods__list">
+      {% for i in range(0,3) %}
+      <a href="goods_detail.html">
+        <div class="checkout__goods__info">
+          <h6>A Hat, Ha ha ha</h6>
+          <p>[color] red</p>
+          <p>[size] M</p>
+          <p>count: 3</p>
+          <p class="price">1200</p>
+        </div>
+        <div class="checkout__goods__cover" style="background-image:url(https://s-media-cache-ak0.pinimg.com/564x/14/e5/d0/14e5d0a21fc73ebdd30403499b3c17d6.jpg);">
+        </div>
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+
+  <div class="checkout__address">
+    <h5>Address</h5>
+    <p>ChanMo</p>
+    <p>15550000000</p>
+    <p>China, Luoyang</p>
+    <a href="#" class="button button_size_small">Add</a>
+  </div>
+
+  <div class="checkout__info">
+    <h5>Info</h5>
+    <div class="checkout__info__container">
+      <div>Price<span>1200</span></div>
+      <div>other<span>10</span></div>
+      <div>Price<span class="price">1200</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="action-bar text-center">
+  <a href="pay.html">Check Out</a>
+</div>
+{% endblock %}

@@ -821,10 +821,13 @@ input {
             display: block;
             width: 24%;
             margin-bottom: 2px;
+            padding: 2px;
+            box-sizing: border-box;
             text-align: center;
             background: white;
             //box-shadow: 2px 2px 2px lightgrey;
             &__icon {
+                font-size: 1.2rem;
             }
             &__name {
                 margin-top: -5px;
@@ -981,4 +984,90 @@ input {
         }
     }
 
+}
+
+.checkout {
+    padding: 4.5rem 1rem;
+    .fa-angle-down {
+        transition: all .5s;
+    }
+    .fa-angle-down_active {
+        transform: rotate(180deg);
+    }
+    &__item {
+        padding: 1rem 0;
+        border-bottom: 2px solid black;
+    }
+    &__goods {
+        @extend .checkout__item;
+    }
+    &__goods__list {
+        transition: all 1s;
+        display: none;
+        //opacity: 0;
+        //transform: translate3d(0, 10%, 0);
+        a {
+            display: block;
+            width: 100%;
+            padding: 1rem .5rem;
+            box-sizing: border-box;
+            display: flex;
+            &:not(:last-child) {
+                border-bottom: 1px solid lightgrey;
+            }
+        }
+    }
+    &__goods__list_active {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+    &__goods__info {
+        width: calc(100% - 20vw);
+        padding-right: .5rem;
+        box-sizing: border-box;
+        h6, p {
+            margin: 0;
+        }
+    }
+    &__goods__cover {
+        width: 20vw;
+        height: 20vw;
+        background-position: center;
+        background-size: 100% auto;
+        background-repeat: no-repeat;
+    }
+    &__address {
+        @extend .checkout__item;
+        p {
+            margin: 0;
+        }
+    }
+    &__info {
+        @extend .checkout__item;
+        border: none;
+        &__container {
+            span {
+                float: right;
+            }
+            div:last-child {
+                margin-top: .5rem;
+                padding-top: .5rem;
+                border-top: 1px solid lightgrey;
+            }
+        }
+    }
+}
+
+.pay {
+    padding: 4.5rem 1rem 1rem;
+    &__order {
+        padding: 1rem 0 2rem;
+        margin: 0 2rem;
+        text-align: center;
+        border-bottom: 2px solid black;
+    }
+    &__action {
+        margin-top: 2rem;
+        text-align: center;
+    }
 }
