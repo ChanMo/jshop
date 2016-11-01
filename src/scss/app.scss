@@ -819,20 +819,23 @@ input {
         padding: .5rem 0;
         .item {
             display: block;
-            width: 24%;
+            width: 24vw;
+            height: 22vw;
             margin-bottom: 2px;
-            padding: 2px;
+            padding: 3vw 0 0;
             box-sizing: border-box;
             text-align: center;
             background: white;
             //box-shadow: 2px 2px 2px lightgrey;
             &__icon {
-                font-size: 1.2rem;
+                font-size: 1.6rem;
+                color: #444;
             }
             &__name {
                 margin-top: -5px;
                 font-size: 0.85rem;
                 white-space: nowrap;
+                color: darkgrey;
             }
         }
     }
@@ -841,10 +844,10 @@ input {
         flex-wrap: wrap;
         justify-content: space-around;
         a {
-            margin-bottom: 1px;
+            margin-bottom: .5rem;
             display: block;
-            height: 40vh;
-            width: 49%;
+            height: 48vw;
+            width: 48vw;
             background-position: center;
             background-size: cover;
             color: white;
@@ -853,7 +856,8 @@ input {
                 position: absolute;
                 bottom: 0;
                 left: 0;
-                background: black;
+                //background: black;
+                background: rgba(black, 0.4);
                 color: white;
                 display: inline-block;
                 padding: 2px 5px;
@@ -863,9 +867,9 @@ input {
             }
             .price {
                 display: inline-block;
-                background: black;
+                //background: black;
                 font-size: 0.85rem;
-                color: white;
+                //color: white;
             }
         }
     }

@@ -54,6 +54,7 @@
   </div-->
 
   <div class="home2__part">
+    {% for i in range(0,2) %}
     {% for item in [
     {icon:"user",name:"user",link:"#"},
     {icon:"map",name:"shop",link:"#"},
@@ -66,6 +67,7 @@
       </div>
       <div class="item__name">{{ item.name }}</div>
     </a>
+    {% endfor %}
     {% endfor %}
   </div>
 
