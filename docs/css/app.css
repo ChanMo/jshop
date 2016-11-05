@@ -2143,3 +2143,14 @@ input {
   .pay__action {
     margin-top: 2rem;
     text-align: center; }
+
+.tables {
+  padding: 4.5rem .5rem 1rem;
+  box-sizing: border-box; }
+  .tables__main {
+    overflow-x: scroll; }
+  .tables table th {
+    padding: .2rem .5rem; }
+  .tables table td {
+    padding: .2rem .5rem;
+    font-size: 0.85rem; }
