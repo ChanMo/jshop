@@ -1155,3 +1155,53 @@ input {
     padding: 0 1rem;
   }
 }
+
+.account {
+  padding: 4.5rem 1rem .5rem;
+  &__main {
+    text-align: center;
+    h1 {
+      padding: 10vh 0;
+      margin: 0;
+      transform: translate3d(0,50%,0);
+      transition: all 1s;
+      opacity: 0;
+    }
+    .active {
+      opacity: 1;
+      transform: translate3d(0,0,0);;
+    }
+    span {
+      font-size: 0.75rem;
+      display: block;
+    }
+  }
+  &__box {
+    display: flex;
+    justify-content: space-between;
+    margin: 1rem 0;
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+    div {
+      padding: .5rem;
+      p {
+        margin: 0;
+        &:first-child {
+          //font-size: 0.85rem;
+        }
+        &:last-child {
+          color: red;
+        }
+      }
+    }
+  }
+  &__list {
+    li {
+      padding: 0 .5rem;
+      box-sizing: border-box;
+      height: 2.5rem;
+      line-height: 2.5rem;
+      border-bottom: 1px solid #efefef;
+    }
+  }
+}
