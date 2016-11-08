@@ -18,6 +18,9 @@
 a:hover {
     text-decoration: none;
 }
+.button:hover {
+  color: white;
+}
 
 ul {
     margin: 0;
@@ -634,14 +637,23 @@ input {
 
 
 .login {
+  background-image: url(../img/zy_login.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
     padding: 4.5rem 1rem 0;
     form {
+      margin-top: 10vh;
         padding: 1.5rem 1.5rem 0;
         input {
             border: none;
             border-bottom: 1px solid lightgrey;
+            background: rgba(white, 0.6);
+            border-bottom: none !important;
         }
         .button {
+            border-bottom: none !important;
+          background: rgb(255,50,50);
             //margin: .5rem 0 1rem;
         }
     }
