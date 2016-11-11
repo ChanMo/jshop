@@ -1349,7 +1349,7 @@ a:hover {
 .button {
   background: orange !important;
   border-radius: 5px !important;
-  padding: .3rem .8rem !important;
+  padding: .5rem .8rem !important;
   font-size: 0.85rem; }
 
 .button:hover {
