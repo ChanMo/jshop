@@ -1155,6 +1155,47 @@ input {
       overflow: hidden;
     }
   }
+  $icolor: (
+  1:#ff7e76,
+  2:#aa87fd,
+  3:#ffaa5b,
+  4:#ff70a5,
+  5:#fac453,
+  6:#67b3fb, 
+  7:#e76dba
+  );
+  &__main2 {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 2rem 1rem 2rem;
+    border: 1px solid #efefef;
+    border-bottom: none;
+    a {
+      display: block;
+      width: 25%;
+      background: white;
+      text-align: center;
+      border-right: 1px solid #efefef;
+      border-bottom: 1px solid #efefef;
+      box-sizing: border-box;
+      padding: .6rem 0;
+      i {
+        font-size: 1.2rem;
+      }
+      @each $i,$color in $icolor {
+        &:nth-child(#{$i}) {
+          //background: $color;
+          i {
+            color: $color;
+          }
+        }
+
+        &:nth-of-type(4n) {
+          border-right: none;
+        }
+      }
+    }
+  }
   &__main {
     margin-bottom: .5rem;
     ul {
@@ -1163,15 +1204,6 @@ input {
       box-shadow: 0 0 2px white;
     }
     li {
-      $icolor: (
-      1:#ff7e76,
-      2:#aa87fd,
-      3:#ffaa5b,
-      4:#ff70a5,
-      5:#fac453,
-      6:#67b3fb, 
-      7:#e76dba
-      );
       @each $i, $color in $icolor {
         &:nth-child(#{$i}) i {
           color: $color;
@@ -1183,6 +1215,7 @@ input {
       height: 2.5rem;
       line-height: 2.5rem;
       padding: 0 .5rem;
+      //text-align: center;
       i {
         margin-right: .5rem;
       }
@@ -1191,9 +1224,10 @@ input {
         font-family: FontAwesome;
         float: right;
       }
+      border-bottom: 1px solid lightgrey;
     }
     li:not(:last-child) a {
-      border-bottom: 1px dashed lightgrey;
+      //border-bottom: 1px dashed lightgrey;
     }
   }
   &__action {
@@ -1249,4 +1283,9 @@ input {
       border-bottom: 1px solid #efefef;
     }
   }
+}
+.fa-chevron-left,
+.fa-shopping-cart,
+.fa-shopping-bag {
+  transform: scale(1.5);
 }

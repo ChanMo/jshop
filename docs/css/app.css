@@ -2204,6 +2204,51 @@ input {
       filter: blur(5px);
       z-index: -1;
       overflow: hidden; }
+  .me__main2 {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 2rem 1rem 2rem;
+    border: 1px solid #efefef;
+    border-bottom: none; }
+    .me__main2 a {
+      display: block;
+      width: 25%;
+      background: white;
+      text-align: center;
+      border-right: 1px solid #efefef;
+      border-bottom: 1px solid #efefef;
+      box-sizing: border-box;
+      padding: .6rem 0; }
+      .me__main2 a i {
+        font-size: 1.2rem; }
+      .me__main2 a:nth-child(1) i {
+        color: #ff7e76; }
+      .me__main2 a:nth-of-type(4n) {
+        border-right: none; }
+      .me__main2 a:nth-child(2) i {
+        color: #aa87fd; }
+      .me__main2 a:nth-of-type(4n) {
+        border-right: none; }
+      .me__main2 a:nth-child(3) i {
+        color: #ffaa5b; }
+      .me__main2 a:nth-of-type(4n) {
+        border-right: none; }
+      .me__main2 a:nth-child(4) i {
+        color: #ff70a5; }
+      .me__main2 a:nth-of-type(4n) {
+        border-right: none; }
+      .me__main2 a:nth-child(5) i {
+        color: #fac453; }
+      .me__main2 a:nth-of-type(4n) {
+        border-right: none; }
+      .me__main2 a:nth-child(6) i {
+        color: #67b3fb; }
+      .me__main2 a:nth-of-type(4n) {
+        border-right: none; }
+      .me__main2 a:nth-child(7) i {
+        color: #e76dba; }
+      .me__main2 a:nth-of-type(4n) {
+        border-right: none; }
   .me__main {
     margin-bottom: .5rem; }
     .me__main ul {
@@ -2228,15 +2273,14 @@ input {
       display: block;
       height: 2.5rem;
       line-height: 2.5rem;
-      padding: 0 .5rem; }
+      padding: 0 .5rem;
+      border-bottom: 1px solid lightgrey; }
       .me__main a i {
         margin-right: .5rem; }
       .me__main a:after {
         content: "\f105";
         font-family: FontAwesome;
         float: right; }
-    .me__main li:not(:last-child) a {
-      border-bottom: 1px dashed lightgrey; }
   .me__action {
     padding: 0 1rem; }
 
@@ -2274,3 +2318,8 @@ input {
     height: 2.5rem;
     line-height: 2.5rem;
     border-bottom: 1px solid #efefef; }
+
+.fa-chevron-left,
+.fa-shopping-cart,
+.fa-shopping-bag {
+  transform: scale(1.5); }
